@@ -32,7 +32,7 @@ Dokumen ini memuat rencana kerja (roadmap) dan monitoring progress untuk menyele
 ### Fase 3: Dokumentasi & Penyusunan Laporan (Target: 13 Juni 2026)
 * [x] **1. Pembuatan Jupyter Notebook (`project_data_science.ipynb`)**
   * Mengintegrasikan proses loading data, cleaning, kalkulasi statistik, visualisasi, dan rekomendasi bisnis ke dalam notebook interaktif.
-* [ ] **2. Penyusunan Makalah (`makalah_data_science.md`)**
+* [x] **2. Penyusunan Makalah (`makalah_data_science.md`)**
   * Menyusun naskah akademis sesuai format soal UTS:
     * **BAB I: Pengantar Data Science** (Definisi & peran di e-commerce).
     * **BAB II: Teknik Pengumpulan Data** (Penjelasan scraper Periplus).
