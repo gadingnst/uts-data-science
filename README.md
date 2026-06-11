@@ -29,7 +29,8 @@ Repositori ini digunakan untuk pengerjaan proyek Ujian Tengah Semester (UTS) mat
 ---
 
 ## 👥 Anggota Kelompok
-* Gading Nasution (Founder & Team Lead)
+1. Sutan Gading Fadhillah Nasution (250401020159)
+2. Rina Mardiana (250401020151)
 
 ## 📖 Studi Kasus Proyek
 **Analisis Harga dan Kategori Buku Impor pada E-Commerce Periplus.com**
