@@ -29,8 +29,8 @@ def scrape_periplus():
     for category_name, base_url in CATEGORIES.items():
         print(f"\nScraping Kategori: {category_name}...")
         
-        # Kita scrape 1-2 halaman per kategori untuk memastikan total data > 100
-        for page in range(1, 3):
+        # Kita scrape 5 halaman per kategori untuk mendapatkan total data sekitar 500-600 baris
+        for page in range(1, 6):
             url = f"{base_url}?page={page}"
             print(f"Mengakses Halaman {page}: {url}")
             
