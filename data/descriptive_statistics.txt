@@ -3,11 +3,13 @@ Mean (Rata-rata)     : Rp 338,934.06
 Median (Nilai Tengah): Rp 285,000.00
 Mode (Modus)         : Rp 238,000.00
 Standar Deviasi      : Rp 229,897.13
-Varians              : Rp 52,852,689,133.29
-Rentang (Min - Max)  : Rp 27,300.00 - Rp 1,951,000.00
+Varians              : 52,852,689,133.29 (Rp²)
+Rentang (Min - Max)  : Rp 27,300.00 - Rp 1,951,000.00 (Range: Rp 1,923,700.00)
 Kuartil 1 (Q1)       : Rp 215,000.00
 Kuartil 3 (Q3)       : Rp 398,000.00
 IQR                  : Rp 183,000.00
+Batas Bawah Outlier  : Rp -59,500.00
+Batas Atas Outlier   : Rp 672,500.00
 Jumlah Outliers      : 37 produk
 
 === STATISTIKA PER KATEGORI ===
