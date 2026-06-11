@@ -120,8 +120,10 @@ def scrape_periplus():
                 
     # Simpan ke CSV
     if books_data:
+        import os
+        os.makedirs("data", exist_ok=True)
         df = pd.DataFrame(books_data)
-        output_file = "periplus_books_raw.csv"
+        output_file = "data/periplus_books_raw.csv"
         df.to_csv(output_file, index=False)
         print(f"\nScraping Selesai! Berhasil mengumpulkan {len(df)} data buku.")
         print(f"Data mentah berhasil disimpan di file: '{output_file}'")

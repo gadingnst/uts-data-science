@@ -22,8 +22,10 @@ def clean_discount(discount_str):
         return 0.0
 
 def process_cleaning():
-    input_file = "periplus_books_raw.csv"
-    output_file = "periplus_books_clean.csv"
+    import os
+    os.makedirs("data", exist_ok=True)
+    input_file = "data/periplus_books_raw.csv"
+    output_file = "data/periplus_books_clean.csv"
     
     print(f"=== Memulai Pembersihan Data: '{input_file}' ===")
     
