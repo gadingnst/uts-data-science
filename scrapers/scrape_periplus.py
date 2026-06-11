@@ -32,14 +32,31 @@ def scrape_periplus():
         # Kita scrape 5 halaman per kategori untuk mendapatkan total data sekitar 500-600 baris
         for page in range(1, 6):
             url = f"{base_url}?page={page}"
-            print(f"Mengakses Halaman {page}: {url}")
+            
+            # Tambahkan retry mechanism untuk mengatasi timeout
+            max_retries = 3
+            response = None
+            for attempt in range(1, max_retries + 1):
+                print(f"Mengakses Halaman {page} (Percobaan {attempt}/{max_retries}): {url}")
+                try:
+                    response = requests.get(url, headers=headers, timeout=20)
+                    if response.status_code == 200:
+                        break
+                    else:
+                        print(f"Status code {response.status_code} pada percobaan {attempt}")
+                except Exception as e:
+                    print(f"Error pada percobaan {attempt}: {e}")
+                
+                if attempt < max_retries:
+                    sleep_time = attempt * 5  # Backoff: 5s, 10s
+                    print(f"Menunggu {sleep_time} detik sebelum mencoba lagi...")
+                    time.sleep(sleep_time)
+            
+            if response is None or response.status_code != 200:
+                print(f"Gagal mengakses {url} setelah {max_retries} percobaan. Lanjut ke kategori berikutnya.")
+                break
             
             try:
-                response = requests.get(url, headers=headers, timeout=15)
-                if response.status_code != 200:
-                    print(f"Gagal mengakses {url} (Status Code: {response.status_code})")
-                    break
-                
                 soup = BeautifulSoup(response.text, 'html.parser')
                 products = soup.find_all('div', class_='single-product')
                 
@@ -116,7 +133,8 @@ def scrape_periplus():
                 
             except Exception as e:
                 print(f"Error saat memproses halaman {page}: {e}")
-                break
+                # Jangan break agar tidak menghentikan seluruh kategori jika satu halaman gagal diolah
+                continue
                 
     # Simpan ke CSV
     if books_data:
