@@ -1,0 +1,13 @@
+# Folder ini diabaikan oleh Git agar tidak mengotori repositori
+env/
+venv/
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Dataset lokal (opsional jika ingin di-ignore, tapi di UTS ini dataset raw & clean tetap di-commit agar dosen bisa langsung lihat)
+# data/*.csv

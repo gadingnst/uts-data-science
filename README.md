@@ -41,20 +41,46 @@ Repositori ini digunakan untuk pengerjaan proyek Ujian Tengah Semester (UTS) mat
   * `scrape_periplus.py` - Script scraper untuk mengambil data buku dari Periplus.com.
   * `clean_data.py` - Script untuk pembersihan data mentah hasil scraping.
 * `data/` - Folder berisi dataset hasil scraping (raw dan clean).
+* `requirements.txt` - File daftar dependencies Python yang dibutuhkan.
 
 ---
 
 ## 🛠️ Panduan Menjalankan Scraper
 
-### 1. Prasyarat (Requirements)
-Pastikan Anda sudah menginstal Python 3 dan library yang dibutuhkan. Jalankan perintah berikut untuk menginstal dependencies:
+### 1. Prasyarat & Setup Virtual Environment (venv)
+Sangat disarankan menggunakan virtual environment agar dependencies tidak menimpa package Python global Anda.
+
+#### Langkah A: Membuat Virtual Environment
+Jalankan perintah berikut di root directory proyek:
 
 ```bash
-pip install requests beautifulsoup4 pandas
+# Membuat venv dengan nama 'env' (atau nama lain bebas)
+python3 -m venv env
+```
+
+#### Langkah B: Mengaktifkan Virtual Environment
+* **macOS / Linux:**
+  ```bash
+  source env/bin/activate
+  ```
+* **Windows (Command Prompt):**
+  ```cmd
+  env\Scripts\activate
+  ```
+* **Windows (PowerShell):**
+  ```powershell
+  .\env\Scripts\Activate.ps1
+  ```
+
+#### Langkah C: Menginstal Dependencies
+Setelah virtual environment aktif (ditandai dengan tulisan `(env)` di terminal), instal library yang diperlukan menggunakan `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
 ```
 
 ### 2. Cara Menjalankan Scraper
-Semua perintah harus dijalankan dari **root directory** repositori ini agar file dataset tersimpan di lokasi yang benar.
+Pastikan virtual environment Anda **tetap aktif** dan jalankan semua perintah dari **root directory** repositori ini.
 
 #### Langkah A: Scraping Data Mentah
 Jalankan script scraper untuk mengambil data dari Periplus.com. Script ini akan mengambil sekitar 500-600 baris data dari 5 kategori berbeda dan menyimpannya sebagai `data/periplus_books_raw.csv`.
