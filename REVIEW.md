@@ -144,18 +144,18 @@ Label angka Rupiah di sumbu X histogram saling menumpuk (*overlapping*) karena f
 | Formula IQR & deteksi outlier | ✅ Benar | Formula standar, hasil konsisten |
 | Konsistensi diskon | ✅ Benar | 0 mismatch dari 178 buku diskon |
 | Kualitas data (missing, negatif, dll.) | ✅ Bersih | Tidak ada anomali kritis |
-| Klaim distribusi outlier per kategori | ❌ Keliru | Business & Self-Help, bukan Biographies & Memoirs |
-| Satuan varians | ⚠️ Kurang tepat | Ditulis "Rp", seharusnya "Rp²" atau tanpa unit |
-| Data duplikat | ⚠️ Perlu justifikasi | 9 baris duplikat, dampak minor |
-| Buku OOS dalam analisis | ⚠️ Perlu penjelasan | 27 buku OOS tanpa narasi justifikasi |
-| File statistik output | ℹ️ Minor | Kurang info batas outlier & range |
-| Label axis histogram | ℹ️ Minor | Tumpang tindih, sulit dibaca |
+| Klaim distribusi outlier per kategori | ✅ FIXED | Notebook cell 11 diperbaiki → "Computer & IT (27) dan Business & Self-Help (5)" |
+| Satuan varians | ✅ FIXED | Diubah ke `52,852,... (Rp²)` di analyze_data.py, notebook, dan txt output |
+| Data duplikat | ⏭️ Skipped | 9 baris duplikat, dampak minor — diputuskan skip oleh user |
+| Buku OOS dalam analisis | ⏭️ Skipped | 27 buku OOS tanpa narasi justifikasi — diputuskan skip oleh user |
+| File statistik output | ✅ FIXED | Ditambahkan Batas Bawah/Atas Outlier dan Range ke txt |
+| Label axis histogram | ✅ FIXED | Ditambahkan `plt.xticks(rotation=45)`, label tidak tumpang tindih lagi |
 
 ---
 
-## 🎯 Prioritas Perbaikan
+## 🎯 Status Perbaikan
 
-1. **[WAJIB]** Perbaiki klaim outlier di notebook — ganti "Biographies & Memoirs" → "Business & Self-Help"
-2. **[DISARANKAN]** Perbaiki satuan Varians dari "Rp" → "Rp²" atau hilangkan prefix
-3. **[OPSIONAL]** Tambahkan justifikasi untuk duplikat dan buku OOS di narasi
-4. **[OPSIONAL]** Lengkapi `descriptive_statistics.txt` dan perbaiki label histogram
+1. ✅ **[FIXED]** Klaim outlier di notebook — diganti "Biographies & Memoirs" → "Business & Self-Help (5 buku)"
+2. ✅ **[FIXED]** Satuan Varians — diganti dari "Rp" → "(Rp²)" di semua tempat
+3. ⏭️ **[SKIPPED]** Justifikasi duplikat dan buku OOS — diputuskan skip oleh user
+4. ✅ **[FIXED]** `descriptive_statistics.txt` dilengkapi + label histogram dirotasi 45°
