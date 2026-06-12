@@ -454,15 +454,11 @@ Berdasarkan temuan di atas, berikut disajikan sejumlah rekomendasi strategis yan
 
 Kategori Children's Books memiliki harga rata-rata terendah (Rp 229.534) dengan standar deviasi paling kecil, menunjukkan segmen harga yang stabil dan terjangkau. Periplus dapat memanfaatkan karakteristik ini dengan membuat **paket *bundling*** berisi 3–4 buku anak dengan harga paket yang menarik, guna meningkatkan nilai transaksi rata-rata (*Average Order Value*). Strategi ini relevan karena pembelian buku anak sering dilakukan oleh orang tua yang cenderung membeli lebih dari satu buku dalam satu transaksi.
 
-#### 6.2.2 Program Cicilan dan Pembiayaan untuk Buku IT Premium
-
-Mengingat harga buku Computer & IT yang sangat tinggi (rata-rata Rp 527.758, maksimum Rp 1.951.000), Periplus dapat bekerja sama dengan penyedia layanan pembayaran cicilan (*buy now, pay later*) seperti Kredivo, Akulaku, atau cicilan kartu kredit untuk **mempermudah akses pembelian buku IT profesional**. Buku-buku IT sering menjadi kebutuhan wajib bagi mahasiswa dan profesional, sehingga opsi cicilan dapat meningkatkan konversi pembelian pada segmen harga tinggi.
-
-#### 6.2.3 Kampanye Harga Terjangkau untuk Buku Fiksi dan Biografi
+#### 6.2.2 Kampanye Harga Terjangkau untuk Buku Fiksi dan Biografi
 
 Kategori Fiction & Literature dan Biographies & Memoirs memiliki median harga di bawah Rp 280.000. Periplus dapat membuat **halaman promosi khusus** bertema "Buku Impor di Bawah Rp 250.000" yang mengkurasi buku-buku populer dari kedua kategori ini. Kampanye semacam ini dapat menarik pembeli impulsif dan memperluas basis pelanggan yang selama ini mungkin menganggap buku impor terlalu mahal.
 
-#### 6.2.4 Optimasi Stok pada Kategori IT
+#### 6.2.3 Optimasi Stok pada Kategori IT
 
 Data menunjukkan bahwa **17 dari 27 buku *out-of-stock*** (63%) berasal dari kategori Computer & IT, yang sekaligus merupakan kategori dengan harga tertinggi. Hal ini menunjukkan potensi *lost revenue* yang signifikan. Periplus sebaiknya **memprioritaskan pengadaan ulang (*restocking*) buku IT yang sering kehabisan stok** dan mempertimbangkan sistem notifikasi (*back-in-stock alert*) bagi pelanggan yang tertarik.
 
