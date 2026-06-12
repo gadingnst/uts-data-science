@@ -49,7 +49,7 @@ Menurut Provost dan Fawcett (2013), *data science* mencakup tiga pilar utama, ya
 
 ### 1.2 Peran Data Science dalam Industri E-Commerce
 
-Industri *e-commerce* merupakan salah satu sektor yang paling intensif memanfaatkan *data science*. Setiap interaksi pengguna — mulai dari pencarian produk, klik halaman, hingga transaksi pembelian — menghasilkan jejak data digital (*digital footprint*) yang sangat berharga bagi pelaku bisnis. Menurut Chaffey dan Ellis-Chadwick (2019), pemanfaatan *data science* dalam *e-commerce* mencakup beberapa area strategis:
+Industri *e-commerce* merupakan salah satu sektor yang paling intensif memanfaatkan *data science*. Setiap interaksi pengguna, mulai dari pencarian produk, klik halaman, hingga transaksi pembelian, menghasilkan jejak data digital (*digital footprint*) yang sangat berharga bagi pelaku bisnis. Menurut Chaffey dan Ellis-Chadwick (2019), pemanfaatan *data science* dalam *e-commerce* mencakup beberapa area strategis:
 
 1. **Analisis Perilaku Konsumen** — Memahami pola pembelian, preferensi kategori produk, dan sensitivitas harga pelanggan melalui analisis data transaksional.
 2. **Optimasi Penetapan Harga (*Dynamic Pricing*)** — Menggunakan analisis statistik untuk menentukan titik harga optimal yang memaksimalkan volume penjualan sekaligus margin keuntungan.
@@ -88,7 +88,7 @@ Data diambil dari halaman katalog produk Periplus.com yang mencakup **5 kategori
 | 5 | Biographies & Memoirs | 114 |
 | | **Total** | **593** |
 
-Pemilihan kelima kategori tersebut didasarkan pada pertimbangan keragaman jenis buku yang merepresentasikan segmen pasar yang berbeda — mulai dari buku akademis/profesional (Computer & IT), buku populer (Fiction & Literature), buku pengembangan diri (Business & Self-Help), buku anak-anak (Children's Books), hingga buku nonfiksi (Biographies & Memoirs).
+Pemilihan kelima kategori tersebut didasarkan pada pertimbangan keragaman jenis buku yang merepresentasikan segmen pasar yang berbeda, mulai dari buku akademis/profesional (Computer & IT), buku populer (Fiction & Literature), buku pengembangan diri (Business & Self-Help), buku anak-anak (Children's Books), hingga buku nonfiksi (Biographies & Memoirs).
 
 ### 2.3 Atribut Data yang Dikumpulkan
 
@@ -99,7 +99,7 @@ Setiap produk buku yang berhasil di-*scrape* memiliki atribut-atribut berikut:
 | 1 | `title` | String | Judul buku |
 | 2 | `author` | String | Nama penulis |
 | 3 | `binding` | String | Jenis penjilidan (Paperback, Hardcover, Board Books) |
-| 4 | `raw_price` | String | Harga jual dalam format teks (misal: "Rp 258,000") |
+| 4 | `raw_price` | String | Harga jual dalam format teks (misal: "Rp258,000") |
 | 5 | `original_price` | String | Harga asli sebelum diskon (jika ada) |
 | 6 | `discount_pct` | String | Persentase diskon (misal: "-37%") |
 | 7 | `in_stock` | Integer | Status ketersediaan (1 = tersedia, 0 = habis) |
@@ -156,7 +156,7 @@ Pembersihan data dilaksanakan menggunakan script Python `scrapers/clean_data.py`
 
 #### 3.2.1 Transformasi Kolom Harga
 
-Kolom harga pada data mentah tersimpan dalam format teks (contoh: `"Rp 258,000"`). Proses transformasi meliputi:
+Kolom harga pada data mentah tersimpan dalam format teks (contoh: `"Rp258,000"`). Proses transformasi meliputi:
 
 - Penghapusan karakter non-numerik (prefix "Rp", spasi, tanda titik pemisah ribuan).
 - Konversi dari tipe data `string` ke `float` untuk memungkinkan operasi aritmatika.
@@ -226,8 +226,8 @@ Berdasarkan eksplorasi awal terhadap dataset bersih, diperoleh profil sebaran da
 |------------|--------|------------|
 | Buku dengan diskon | 178 | 30,0% |
 | Buku tanpa diskon | 415 | 70,0% |
-| Rata-rata persentase diskon | 34,0% | — |
-| Diskon tertinggi | 92% | — |
+| Rata-rata persentase diskon | 34,0% | - |
+| Diskon tertinggi | 92% | - |
 
 ---
 
@@ -276,9 +276,9 @@ $$s^2 = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2 \qquad;\qquad s = \sqrt{s
 
 Kuartil membagi data terurut menjadi empat bagian sama besar:
 
-- **Q1 (Kuartil 1):** Nilai pada persentil ke-25 — memisahkan 25% data terendah.
+- **Q1 (Kuartil 1):** Nilai pada persentil ke-25 memisahkan 25% data terendah.
 - **Q2 (Kuartil 2):** Sama dengan median (persentil ke-50).
-- **Q3 (Kuartil 3):** Nilai pada persentil ke-75 — memisahkan 25% data tertinggi.
+- **Q3 (Kuartil 3):** Nilai pada persentil ke-75 memisahkan 25% data tertinggi.
 
 *Interquartile Range* (IQR) adalah selisih antara Q3 dan Q1, yang merepresentasikan sebaran 50% data bagian tengah:
 
@@ -301,26 +301,26 @@ Berikut adalah hasil penerapan statistika deskriptif terhadap variabel `price_id
 
 | Ukuran Statistik | Nilai |
 |-------------------|-------|
-| Rata-rata (*Mean*) | Rp 338.934,06 |
-| Nilai Tengah (*Median*) | Rp 285.000,00 |
-| Modus (*Mode*) | Rp 238.000,00 |
-| Standar Deviasi | Rp 229.897,13 |
+| Rata-rata (*Mean*) | Rp338.934,06 |
+| Nilai Tengah (*Median*) | Rp285.000,00 |
+| Modus (*Mode*) | Rp238.000,00 |
+| Standar Deviasi | Rp229.897,13 |
 | Varians | 52.852.689.133,29 (Rp²) |
-| Nilai Minimum | Rp 27.300,00 |
-| Nilai Maksimum | Rp 1.951.000,00 |
-| Rentang (*Range*) | Rp 1.923.700,00 |
-| Kuartil 1 (Q1) | Rp 215.000,00 |
-| Kuartil 3 (Q3) | Rp 398.000,00 |
-| IQR | Rp 183.000,00 |
-| Batas Bawah Pencilan | Rp −59.500,00 |
-| Batas Atas Pencilan | Rp 672.500,00 |
+| Nilai Minimum | Rp27.300,00 |
+| Nilai Maksimum | Rp1.951.000,00 |
+| Rentang (*Range*) | Rp1.923.700,00 |
+| Kuartil 1 (Q1) | Rp215.000,00 |
+| Kuartil 3 (Q3) | Rp398.000,00 |
+| IQR | Rp183.000,00 |
+| Batas Bawah Pencilan | Rp−59.500,00 |
+| Batas Atas Pencilan | Rp672.500,00 |
 | Jumlah Pencilan | 37 produk |
 
 **Interpretasi:**
 
-- **Mean > Median > Mode** (Rp 338.934 > Rp 285.000 > Rp 238.000) mengindikasikan bahwa distribusi harga bersifat **condong ke kanan (*right-skewed* / *positive skew*)**. Hal ini dikonfirmasi oleh nilai *skewness* sebesar **2,8728** (positif, cukup besar), yang menunjukkan adanya ekor panjang di sisi harga tinggi.
-- **Standar deviasi** yang besar (Rp 229.897) relatif terhadap *mean* menunjukkan **variasi harga yang tinggi** antar produk. Koefisien variasi (*coefficient of variation*) mencapai sekitar 67,8%, artinya harga buku impor sangat beragam.
-- **Batas bawah pencilan bernilai negatif** (Rp −59.500), yang berarti tidak ada pencilan di sisi bawah karena harga tidak mungkin negatif. Seluruh **37 pencilan** berada di sisi atas (harga > Rp 672.500).
+- **Mean > Median > Mode** (Rp338.934 > Rp285.000 > Rp238.000) mengindikasikan bahwa distribusi harga bersifat **condong ke kanan (*right-skewed* / *positive skew*)**. Hal ini dikonfirmasi oleh nilai *skewness* sebesar **2,8728** (positif, cukup besar), yang menunjukkan adanya ekor panjang di sisi harga tinggi.
+- **Standar deviasi** yang besar (Rp229.897) relatif terhadap *mean* menunjukkan **variasi harga yang tinggi** antar produk. Koefisien variasi (*coefficient of variation*) mencapai sekitar 67,8%, artinya harga buku impor sangat beragam.
+- **Batas bawah pencilan bernilai negatif** (Rp−59.500), yang berarti tidak ada pencilan di sisi bawah karena harga tidak mungkin negatif. Seluruh **37 pencilan** berada di sisi atas (harga > Rp672.500).
 
 #### 4.4.2 Statistik Deskriptif per Kategori
 
@@ -334,9 +334,9 @@ Berikut adalah hasil penerapan statistika deskriptif terhadap variabel `price_id
 
 **Interpretasi per Kategori:**
 
-- **Computer & IT** merupakan kategori dengan harga rata-rata tertinggi (Rp 527.758) sekaligus variasi harga terluas (standar deviasi Rp 375.927). Hal ini mencerminkan sifat buku IT/komputer yang sering berupa *textbook* akademis atau referensi profesional dengan harga premium.
-- **Children's Books** memiliki harga rata-rata terendah (Rp 229.534) dengan standar deviasi paling kecil (Rp 86.197), menunjukkan segmen harga yang paling homogen dan terjangkau.
-- **Fiction & Literature** memiliki median terendah (Rp 250.000) dengan sebaran harga yang relatif rapat, mengindikasikan harga buku fiksi yang cenderung stabil dan kompetitif.
+- **Computer & IT** merupakan kategori dengan harga rata-rata tertinggi (Rp527.758) sekaligus variasi harga terluas (standar deviasi Rp375.927). Hal ini mencerminkan sifat buku IT/komputer yang sering berupa *textbook* akademis atau referensi profesional dengan harga premium.
+- **Children's Books** memiliki harga rata-rata terendah (Rp229.534) dengan standar deviasi paling kecil (Rp86.197), menunjukkan segmen harga yang paling homogen dan terjangkau.
+- **Fiction & Literature** memiliki median terendah (Rp250.000) dengan sebaran harga yang relatif rapat, mengindikasikan harga buku fiksi yang cenderung stabil dan kompetitif.
 - Pada kategori **Business & Self-Help** dan **Biographies & Memoirs**, nilai mean dan median relatif berdekatan, menunjukkan distribusi harga yang lebih simetris dibandingkan Computer & IT.
 
 #### 4.4.3 Distribusi Pencilan per Kategori
@@ -374,9 +374,9 @@ Histogram di atas menampilkan distribusi frekuensi harga jual buku impor pada 30
 
 **Analisis:**
 
-- Distribusi menunjukkan pola **condong ke kanan (*right-skewed*)** yang sangat jelas, di mana mayoritas buku berada pada kisaran harga Rp 100.000 – Rp 400.000.
-- Puncak distribusi (*peak/mode*) berada di sekitar Rp 200.000 – Rp 250.000, yang menjadi rentang harga paling umum untuk buku impor.
-- Ekor panjang ke kanan mencapai hampir Rp 2.000.000, menunjukkan keberadaan buku-buku premium dengan harga jauh di atas mayoritas.
+- Distribusi menunjukkan pola **condong ke kanan (*right-skewed*)** yang sangat jelas, di mana mayoritas buku berada pada kisaran harga Rp100.000 – Rp400.000.
+- Puncak distribusi (*peak/mode*) berada di sekitar Rp200.000 – Rp250.000, yang menjadi rentang harga paling umum untuk buku impor.
+- Ekor panjang ke kanan mencapai hampir Rp2.000.000, menunjukkan keberadaan buku-buku premium dengan harga jauh di atas mayoritas.
 - Nilai *skewness* = 2,8728 dan *kurtosis* = 11,9725 secara kuantitatif mengonfirmasi distribusi yang sangat condong dan memiliki ekor berat (*heavy-tailed*).
 
 ### 5.3 Boxplot — Deteksi Pencilan Harga
@@ -391,10 +391,10 @@ Boxplot menampilkan ringkasan lima angka (*five-number summary*): nilai minimum,
 
 **Analisis:**
 
-- **Kotak (IQR)** membentang dari Rp 215.000 (Q1) hingga Rp 398.000 (Q3), menunjukkan bahwa 50% data tengah berada pada rentang Rp 183.000.
+- **Kotak (IQR)** membentang dari Rp215.000 (Q1) hingga Rp398.000 (Q3), menunjukkan bahwa 50% data tengah berada pada rentang Rp183.000.
 - **Garis median** berada di kiri pusat kotak, mengonfirmasi kemiringan distribusi ke kanan.
-- **Whisker kanan** berakhir di sekitar Rp 672.500 (batas atas pencilan).
-- Terdapat **37 titik pencilan** yang tersebar di sisi kanan, dengan nilai tertinggi mencapai Rp 1.951.000. Titik-titik ini dominan berasal dari kategori Computer & IT.
+- **Whisker kanan** berakhir di sekitar Rp672.500 (batas atas pencilan).
+- Terdapat **37 titik pencilan** yang tersebar di sisi kanan, dengan nilai tertinggi mencapai Rp1.951.000. Titik-titik ini dominan berasal dari kategori Computer & IT.
 
 ### 5.4 Bar Chart — Sebaran Jumlah Buku per Kategori
 
@@ -424,11 +424,11 @@ Boxplot ini menampilkan perbandingan distribusi harga untuk masing-masing katego
 
 **Analisis:**
 
-- **Computer & IT** memiliki kotak (IQR) terlebar dan *whisker* terpanjang, mengindikasikan variasi harga yang paling tinggi. Pencilan pada kategori ini mencapai hampir Rp 2.000.000.
+- **Computer & IT** memiliki kotak (IQR) terlebar dan *whisker* terpanjang, mengindikasikan variasi harga yang paling tinggi. Pencilan pada kategori ini mencapai hampir Rp2.000.000.
 - **Children's Books** memiliki kotak terkecil dan posisi paling rendah pada sumbu harga, mengkonfirmasi bahwa buku anak memiliki harga yang paling rendah dan paling konsisten.
-- **Business & Self-Help** menunjukkan kotak yang cukup lebar di area harga menengah (Rp 250.000 – Rp 500.000) dengan beberapa pencilan di kisaran Rp 750.000 – Rp 950.000.
+- **Business & Self-Help** menunjukkan kotak yang cukup lebar di area harga menengah (Rp250.000 – Rp500.000) dengan beberapa pencilan di kisaran Rp750.000 – Rp950.000.
 - **Fiction & Literature** memiliki kotak yang kompak di area harga rendah-menengah, dengan sedikit pencilan.
-- **Biographies & Memoirs** menunjukkan sebaran serupa dengan Fiction & Literature, namun dengan beberapa pencilan di sisi harga tinggi (hingga sekitar Rp 985.000).
+- **Biographies & Memoirs** menunjukkan sebaran serupa dengan Fiction & Literature, namun dengan beberapa pencilan di sisi harga tinggi (hingga sekitar Rp985.000).
 
 ---
 
@@ -438,9 +438,9 @@ Boxplot ini menampilkan perbandingan distribusi harga untuk masing-masing katego
 
 Berdasarkan analisis statistika deskriptif dan visualisasi data yang telah dilakukan pada **593 produk buku impor** dari **5 kategori** di Periplus.com, diperoleh temuan-temuan utama sebagai berikut:
 
-1. **Distribusi Harga Condong ke Kanan (*Right-Skewed*)** — Rata-rata harga buku impor (Rp 338.934) berada jauh di atas nilai median (Rp 285.000), yang disebabkan oleh keberadaan sejumlah buku berharga sangat tinggi, khususnya dari kategori Computer & IT. Implikasi praktisnya, median lebih tepat digunakan sebagai ukuran representatif harga "tipikal" buku impor dibandingkan *mean*.
+1. **Distribusi Harga Condong ke Kanan (*Right-Skewed*)** — Rata-rata harga buku impor (Rp338.934) berada jauh di atas nilai median (Rp285.000), yang disebabkan oleh keberadaan sejumlah buku berharga sangat tinggi, khususnya dari kategori Computer & IT. Implikasi praktisnya, median lebih tepat digunakan sebagai ukuran representatif harga "tipikal" buku impor dibandingkan *mean*.
 
-2. **Disparitas Harga Antar Kategori Sangat Signifikan** — Kategori Computer & IT memiliki rata-rata harga 2,3 kali lipat dari Children's Books (Rp 527.758 vs Rp 229.534). Hal ini mencerminkan perbedaan fundamental dalam biaya produksi, target pasar, dan nilai konten antar segmen buku.
+2. **Disparitas Harga Antar Kategori Sangat Signifikan** — Kategori Computer & IT memiliki rata-rata harga 2,3 kali lipat dari Children's Books (Rp527.758 vs Rp229.534). Hal ini mencerminkan perbedaan fundamental dalam biaya produksi, target pasar, dan nilai konten antar segmen buku.
 
 3. **Pencilan Terkonsentrasi pada Kategori IT** — Dari 37 pencilan yang terdeteksi, 27 (73%) berasal dari kategori Computer & IT, yang menunjukkan bahwa buku-buku IT profesional dan akademis memiliki rentang harga yang paling luas dan sering mencapai harga premium.
 
@@ -452,11 +452,11 @@ Berdasarkan temuan di atas, berikut disajikan sejumlah rekomendasi strategis yan
 
 #### 6.2.1 Strategi Bundling untuk Buku Anak
 
-Kategori Children's Books memiliki harga rata-rata terendah (Rp 229.534) dengan standar deviasi paling kecil, menunjukkan segmen harga yang stabil dan terjangkau. Periplus dapat memanfaatkan karakteristik ini dengan membuat **paket *bundling*** berisi 3–4 buku anak dengan harga paket yang menarik, guna meningkatkan nilai transaksi rata-rata (*Average Order Value*). Strategi ini relevan karena pembelian buku anak sering dilakukan oleh orang tua yang cenderung membeli lebih dari satu buku dalam satu transaksi.
+Kategori Children's Books memiliki harga rata-rata terendah (Rp229.534) dengan standar deviasi paling kecil, menunjukkan segmen harga yang stabil dan terjangkau. Periplus dapat memanfaatkan karakteristik ini dengan membuat **paket *bundling*** berisi 3–4 buku anak dengan harga paket yang menarik, guna meningkatkan nilai transaksi rata-rata (*Average Order Value*). Strategi ini relevan karena pembelian buku anak sering dilakukan oleh orang tua yang cenderung membeli lebih dari satu buku dalam satu transaksi.
 
 #### 6.2.2 Kampanye Harga Terjangkau untuk Buku Fiksi dan Biografi
 
-Kategori Fiction & Literature dan Biographies & Memoirs memiliki median harga di bawah Rp 280.000. Periplus dapat membuat **halaman promosi khusus** bertema "Buku Impor di Bawah Rp 250.000" yang mengkurasi buku-buku populer dari kedua kategori ini. Kampanye semacam ini dapat menarik pembeli impulsif dan memperluas basis pelanggan yang selama ini mungkin menganggap buku impor terlalu mahal.
+Kategori Fiction & Literature dan Biographies & Memoirs memiliki median harga di bawah Rp280.000. Periplus dapat membuat **halaman promosi khusus** bertema "Buku Impor di Bawah Rp250.000" yang mengkurasi buku-buku populer dari kedua kategori ini. Kampanye semacam ini dapat menarik pembeli impulsif dan memperluas basis pelanggan yang selama ini mungkin menganggap buku impor terlalu mahal.
 
 #### 6.2.3 Optimasi Stok pada Kategori IT
 
