@@ -312,9 +312,9 @@ Berikut adalah hasil penerapan statistika deskriptif terhadap variabel `price_id
 | Kuartil 1 (Q1) | Rp215.000,00 |
 | Kuartil 3 (Q3) | Rp398.000,00 |
 | IQR | Rp183.000,00 |
-| Batas Bawah Pencilan | Rp−59.500,00 |
-| Batas Atas Pencilan | Rp672.500,00 |
-| Jumlah Pencilan | 37 produk |
+| Batas Bawah Pencilan (*Outlier*) | Rp−59.500,00 |
+| Batas Atas Pencilan (*Outlier*) | Rp672.500,00 |
+| Jumlah Pencilan (*Outlier*) | 37 produk |
 
 **Interpretasi:**
 
@@ -341,7 +341,7 @@ Berikut adalah hasil penerapan statistika deskriptif terhadap variabel `price_id
 
 #### 4.4.3 Distribusi Pencilan per Kategori
 
-| Kategori | Jumlah Pencilan |
+| Kategori | Jumlah Pencilan (*Outliers*) |
 |----------|-----------------|
 | Computer & IT | 27 |
 | Business & Self-Help | 5 |

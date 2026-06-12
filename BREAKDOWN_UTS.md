@@ -7,7 +7,7 @@ Dokumen ini memuat rencana kerja (roadmap) dan monitoring progress untuk menyele
 
 ## 📅 Monitoring Progress & Checklist Tugas
 
-### Fase 1: Data Acquisition & Preprocessing (Target: 11 - 12 Juni 2026)
+### Fase 1: Data Acquisition & Preprocessing
 * [x] **1. Pembuatan Scraper Periplus.com (`scrapers/scrape_periplus.py`)**
   * Menggunakan `requests` dan `BeautifulSoup` untuk mengekstrak data dari halaman kategori Periplus.
   * Mengambil data dari 5 kategori berbeda dengan total target $\approx 500$ baris data.
@@ -17,7 +17,7 @@ Dokumen ini memuat rencana kerja (roadmap) dan monitoring progress untuk menyele
   * Menangani data kosong (*missing values*) dan menyaring data yang tidak memiliki harga jual.
   * Menyimpan dataset bersih ke `data/periplus_books_clean.csv`.
 
-### Fase 2: Analisis Statistik & Visualisasi (Target: 12 Juni 2026)
+### Fase 2: Analisis Statistik & Visualisasi
 * [x] **1. Kalkulasi Statistika Deskriptif (`analyze_data.py`)**
   * Menghitung nilai pemusatan data: *Mean*, *Median*, *Mode*.
   * Menghitung nilai penyebaran data: *Standard Deviation*, *Variance*, *Range* (Min-Max), *Kuartil 1 (Q1)*, *Kuartil 3 (Q3)*, dan *Interquartile Range (IQR)*.
@@ -29,7 +29,7 @@ Dokumen ini memuat rencana kerja (roadmap) dan monitoring progress untuk menyele
   * [x] **Bar Chart:** Sebaran jumlah buku per kategori (`plots/category_distribution.png`).
   * [x] **Boxplot per Kategori:** Membandingkan sebaran harga buku antar kategori (`plots/category_price_boxplot.png`).
 
-### Fase 3: Dokumentasi & Penyusunan Laporan (Target: 13 Juni 2026)
+### Fase 3: Dokumentasi & Penyusunan Laporan
 * [x] **1. Pembuatan Jupyter Notebook (`project_data_science.ipynb`)**
   * Mengintegrasikan proses loading data, cleaning, kalkulasi statistik, visualisasi, dan rekomendasi bisnis ke dalam notebook interaktif.
 * [x] **2. Penyusunan Makalah (`makalah_data_science.md`)**
@@ -42,7 +42,7 @@ Dokumen ini memuat rencana kerja (roadmap) dan monitoring progress untuk menyele
     * **BAB VI: Studi Kasus & Manfaat bagi Pengguna** (Rekomendasi bisnis berbasis data untuk e-commerce/Periplus).
 
 ### Fase 4: Finalisasi & Submission (Target: 14 Juni 2026)
-* [ ] **1. Konversi Laporan ke PDF**
+* [x] **1. Konversi Laporan ke PDF**
   * Mengonversi `makalah_data_science.md` ke format PDF dengan nama file sesuai instruksi: `DS_IF404_GadingNasution.pdf`.
 * [ ] **2. Upload Google Drive & LMS**
   * Mengunggah dataset (CSV), notebook (IPYNB), dan PDF Makalah ke Google Drive.
