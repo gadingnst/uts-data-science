@@ -4,30 +4,6 @@ Repositori ini digunakan untuk pengerjaan proyek Ujian Tengah Semester (UTS) mat
 
 ---
 
-## 📝 Soal Ujian Tengah Semester (UTS)
-
-**Mata Kuliah:** Data Science  
-**Kelas:** IF404  
-**Prodi:** PJJ Informatika S1  
-**Waktu:** 01 s.d. 14 Juni 2026  
-**Dosen:** Ir. Ahmad Chusyairi, M.Com., CDS., IPM., ASEAN Eng  
-**Sifat Ujian:** Kelompok – Project Base Learning  
-
-### Petunjuk Pengerjaan Soal:
-1. Perhatikan waktu yang telah disetting untuk mengerjakan Ujian, jika lewat batas waktu maka jawaban Anda tidak akan diterima.
-2. Tulis lengkap identitas dan uraian pekerjaan Anda pada Makalah.
-3. Jawaban Ujian tetap diupload oleh masing-masing anggota kelompok (bukan hanya perwakilan saja). $\rightarrow$ Jika dikerjakan secara kelompok (1 kelompok minimal 3 mahasiswa dan maksimal 5 mahasiswa).
-4. **Teknis Pengumpulan:**
-   * Upload file makalah dengan format: `DS_IF404_NamaLengkap.pdf`
-   * Upload file project via Google Drive jika ukuran filenya terlalu besar dan lampirkan link Google Drive.
-
-### Soal:
-1. Pembuatan makalah dan analisis untuk *data science* dimana terdapat: pengantar data science, konsep dasar statistika, penyajian data, peringkasan data, eksplorasi data (kualitas dan pola sebaran data), teknik pengumpulan data, visualisasi data dengan studi kasus yang bertema: *e-commerce*, *e-education* (pilih salah satu) dan bermanfaat bagi pengguna. **(Bobot 50)**
-2. Pembuatan *project data science* dilengkapi dataset sesuai dengan studi kasus pada soal nomor (1). **(Bobot 50)**
-3. Semua file diupload pada GDrive, linknya diletakan pada makalah tersebut dan diupload di LMS Edlink yang sudah disediakan.
-
----
-
 ## 👥 Anggota Kelompok
 1. Sutan Gading Fadhillah Nasution (250401020159)
 2. Rina Mardiana (250401020151)
@@ -41,15 +17,18 @@ Repositori ini digunakan untuk pengerjaan proyek Ujian Tengah Semester (UTS) mat
 * `scrapers/` - Folder berisi script untuk pengumpulan dan pembersihan data.
   * `scrape_periplus.py` - Script scraper untuk mengambil data buku dari Periplus.com.
   * `clean_data.py` - Script untuk pembersihan data mentah hasil scraping.
-* `data/` - Folder berisi dataset hasil scraping (raw dan clean).
+* `analyze_data.py` - Script untuk melakukan analisis statistika deskriptif dan menghasilkan visualisasi data.
+* `project_data_science.ipynb` - Jupyter Notebook interaktif untuk analisis eksploratif data (EDA), visualisasi, dan rekomendasi bisnis.
+* `data/` - Folder berisi dataset hasil scraping (raw dan clean) serta ringkasan statistik.
+* `plots/` - Folder berisi file gambar visualisasi data hasil analisis.
 * `requirements.txt` - File daftar dependencies Python yang dibutuhkan.
 
 ---
 
-## 🛠️ Panduan Menjalankan Scraper
+## 🛠️ Panduan Menjalankan Proyek
 
 ### 1. Prasyarat & Setup Virtual Environment (venv)
-Sangat disarankan menggunakan virtual environment agar dependencies tidak menimpa package Python global Anda.
+Sangat disarankan menggunakan virtual environment agar dependencies tidak menimpa package Python global kita.
 
 #### Langkah A: Membuat Virtual Environment
 Jalankan perintah berikut di root directory proyek:
@@ -81,7 +60,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Cara Menjalankan Scraper
-Pastikan virtual environment Anda **tetap aktif** dan jalankan semua perintah dari **root directory** repositori ini.
+Pastikan virtual environment kita **tetap aktif** dan jalankan semua perintah dari **root directory** repositori ini.
 
 #### Langkah A: Scraping Data Mentah
 Jalankan script scraper untuk mengambil data dari Periplus.com. Script ini akan mengambil sekitar 500-600 baris data dari 5 kategori berbeda dan menyimpannya sebagai `data/periplus_books_raw.csv`.
@@ -98,3 +77,39 @@ Setelah proses scraping selesai dan file `data/periplus_books_raw.csv` terbentuk
 ```bash
 python scrapers/clean_data.py
 ```
+
+#### Langkah C: Analisis dan Visualisasi Data
+Setelah dataset bersih `data/periplus_books_clean.csv` terbentuk, jalankan script analisis untuk melakukan kalkulasi statistika deskriptif dan menghasilkan visualisasi data ke dalam folder `plots/`.
+
+```bash
+python analyze_data.py
+```
+
+Hasil dari langkah ini:
+* File `data/descriptive_statistics.txt` yang berisi ringkasan statistik deskriptif data.
+* Folder `plots/` yang berisi 4 file visualisasi grafik (distribusi harga, boxplot outlier, bar chart kategori, dan perbandingan harga per kategori).
+
+---
+
+### 3. Eksplorasi Interaktif dengan Jupyter Notebook (.ipynb)
+
+Untuk melakukan analisis secara interaktif dan melihat visualisasi beserta penjelasan lengkap langkah demi langkah, kita dapat menggunakan Jupyter Notebook yang telah disediakan (`project_data_science.ipynb`).
+
+#### Opsi A: Menggunakan VS Code (Rekomendasi)
+1. Pastikan kita telah menginstal ekstensi **Jupyter** di VS Code.
+2. Pastikan virtual environment `env` telah aktif.
+3. Buka file `project_data_science.ipynb` di VS Code.
+4. Pilih kernel Python dari virtual environment (`env/bin/python`).
+5. Klik **Run All** atau jalankan setiap cell secara berurutan.
+
+#### Opsi B: Menggunakan Jupyter Notebook Server di Browser
+1. Pastikan virtual environment kita telah aktif.
+2. Instal Jupyter Notebook di venv kita (jika belum terinstal):
+   ```bash
+   pip install notebook
+   ```
+3. Jalankan server Jupyter:
+   ```bash
+   jupyter notebook
+   ```
+4. Browser akan otomatis terbuka dan menampilkan dashboard Jupyter. Buka file `project_data_science.ipynb` dan jalankan cell yang ada.
